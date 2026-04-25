@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVDR Studios Banlist</title>
+    <link rel="icon" type="image/x-icon" href="https://ovdrstudios.com/assets/images/favicon.png">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+           /* color: #bb86fc; */
+            text-align: center;
+            margin: 0;
+        }
+        p {
+            line-height: 1.25;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            color: #ffffff42;
+            transition: color 0.2s ease;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        a:hover {
+            color: #ffffff8f;
+            text-decoration: underline;
+        }
+        
+        .members-list {
+            background-color: #1e1e1e;
+            /*border-radius: 8px;*/
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .member {
+            margin: 8px 0;
+            padding: 6px;
+            border-left: 3px solid #f0eaf7;
+            padding-left: 15px;
+            background-color: #181818;
+            cursor: help;
+            transition: background-color 0.2s ease;
+        }
+        .member:hover {
+            background-color: #2a2a2a;
+        }
+        
+        /* Custom tooltip styling */
+        .member[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 1000;
+            margin-top: -30px;
+            margin-left: 10px;
+            border: 1px solid #555;
+        }
+        
+        .member[title]:hover::before {
+            content: '';
+            position: absolute;
+            border: 5px solid transparent;
+            border-top-color: #333;
+            margin-top: -5px;
+            margin-left: 15px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OVDR Studios Banlist</h1>
+        
+        <p>This page lists members banned from FNAF: Management Wanted. The mod uses this public webpage so we can add & remove members and have
+            it update in real time.</p>
+        <p>Hover over a UUID to see the associated username and reason.</p>
+        <p style="margin-bottom: 20px;">
+            To follow Mojang's EULA, being banned only restricts your access to
+            Management Wanted content, <strong>NOT</strong> Minecraft content!
+        </p>
+                
+        <div class="members-list">
+           <!--<div class="member" title="Name (Reason)">UUID</div>-->
+        </div>
+
+        <a href="https://namemc.com/" target="_blank">Open NameMC website</a>
+    </div>
+</body>
