@@ -41,7 +41,4 @@ THIS WORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED. THE COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES,
 OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK.
 
-───────────────────────────────────────────────────────────────────────────
-Copyright (c) 2026 ItzZyphron | Citadel Studios | citadelservers.online
-All Rights Reserved.
-───────────────────────────────────────────────────────────────────────────
+Copyright (c) 2026 ItzZyphron | Citadel Studios | citadelservers.online — All Rights Reserved.
