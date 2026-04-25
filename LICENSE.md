@@ -32,8 +32,8 @@ You may NOT:
 PERMISSIONS
 
 Any use of this work outside the above restrictions requires explicit written
-authorization from ItzZyphron / Citadel Studios. To request permission,
-contact: citadelservers.online
+authorization from ItzZyphron / Citadel Studios.
+
 
 DISCLAIMER
 
