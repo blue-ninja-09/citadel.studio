@@ -16,7 +16,7 @@
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,24 +26,31 @@
             width: 100%;
         }
         h1 {
-            color: #bb86fc;
+            color: #722F37;
             text-align: center;
+            margin: 0;
         }
         p {
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.25;
         }
+
         .members-list {
             background-color: #1e1e1e;
-            border-radius: 8px;
+            /*border-radius: 8px;*/
             padding: 20px;
             margin-top: 20px;
         }
         .member {
             margin: 8px 0;
-            padding: 8px;
-            border-left: 3px solid #bb86fc;
+            padding: 6px;
+            border-left: 3px solid #722F37;
             padding-left: 15px;
+            background-color: #181818;
+            cursor: help;
+            transition: background-color 0.2s ease;
+        }
+        .member:hover {
+            background-color: #2a2a2a;
         }
     </style>
 </head>
