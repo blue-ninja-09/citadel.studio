@@ -231,7 +231,7 @@
     <button class="tab-button" onclick="openTab(event, 'citadel')">Citadel Studios</button>
     <button class="tab-button" onclick="openTab(event, 'itzzy')">ItzZyphron</button>
     <button class="tab-button" onclick="openTab(event, 'buttons')">Links & Resources</button>
-    <button class="tab-button" onclick="openTab(event, 'banlist')">Banlist</button>
+    <button class="tab-button" onclick="window.location.href='CM/banlist.html'">Banlist</button>
   </div>
 
   <div class="content-container">
@@ -299,22 +299,13 @@
         <a href="https://modrinth.com/user/ItzZyphron" target="_blank" class="action-button primary">
           Modrinth Profile
         </a>
-        <button class="action-button primary" onclick="openTab(event, 'banlist')">
+        <button class="action-button primary" onclick="window.location.href='CM/banlist.html'">
           View Banlist
         </button>
         <a href="mailto:contact@citadelstudios.com" class="action-button primary">
           Contact Us
         </a>
       </div>
-    </div>
-
-    <!-- Banlist Tab -->
-    <div id="banlist" class="tab-content">
-      <h2 class="section-title">Community Banlist</h2>
-      <p class="description">
-        This is our community banlist. For detailed information, please refer to the banlist page.
-      </p>
-      <iframe src="CM/banlist.html" width="100%" height="800px" style="border: 2px solid #722F37; border-radius: 8px; margin-top: 20px;"></iframe>
     </div>
   </div>
 
