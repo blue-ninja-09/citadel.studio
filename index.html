@@ -337,8 +337,65 @@
     <!-- License Tab -->
     <div id="license" class="tab-content">
       <h2 class="section-title">License & Copyright</h2>
-      <div id="license-content" class="license-content">
-        <p style="color: #999; text-align: center;">Loading license...</p>
+      <div class="license-content">
+        <h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">COPYRIGHT NOTICE</h3>
+        <p class="license-text">
+          Copyright &copy; 2026 ItzZyphron, Citadel Studios, and citadelservers.online<br>
+          All Rights Reserved.
+        </p>
+        <p class="license-text">
+          This copyright applies to all works created by ItzZyphron, Citadel Studios, and citadelservers.online, including but not limited to:
+        </p>
+        <ul class="license-list">
+          <li>All source code, scripts, and software</li>
+          <li>All modifications and derivative works (mods)</li>
+          <li>The citadelservers.online website and all associated content</li>
+          <li>All assets, graphics, audio, and media</li>
+          <li>All documentation and written materials</li>
+          <li>Any other creative or intellectual works produced under these names</li>
+        </ul>
+
+        <h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">RESTRICTIONS</h3>
+        <p class="license-text">
+          No part of this work may be reproduced, distributed, transmitted, modified, adapted, publicly displayed, publicly performed, or otherwise used in any form or by any means — electronic, mechanical, photocopying, recording, or otherwise — without the express prior written permission of the copyright holder.
+        </p>
+        <p class="license-text"><strong>You may NOT:</strong></p>
+        <ul class="license-list">
+          <li>Copy, clone, or reproduce this work in whole or in part</li>
+          <li>Modify, adapt, or create derivative works</li>
+          <li>Distribute, sublicense, sell, or transfer this work to any third party</li>
+          <li>Use this work for commercial or non-commercial purposes without permission</li>
+          <li>Remove or alter this copyright notice in any copy or portion of the work</li>
+        </ul>
+
+        <h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">CONFIDENTIALITY & TRADE SECRETS</h3>
+        <p class="license-text">
+          Certain source code, software, systems, and related materials produced under ItzZyphron, Citadel Studios, and citadelservers.online constitute proprietary trade secrets and confidential information. This includes, but is not limited to, unpublished source code, internal tools, backend infrastructure, and any materials not explicitly released to the public.
+        </p>
+        <p class="license-text"><strong>You may NOT:</strong></p>
+        <ul class="license-list">
+          <li>Reverse engineer, decompile, or disassemble any portion of the software</li>
+          <li>Attempt to derive, reconstruct, or discover any source code, algorithms, or underlying logic from compiled or distributed forms</li>
+          <li>Disclose, share, or transmit any confidential materials to any third party</li>
+          <li>Use any confidential information to develop competing or derivative works</li>
+        </ul>
+        <p class="license-text">
+          Any individual who obtains access to confidential materials — whether intentionally or inadvertently — is bound by these confidentiality obligations and must immediately cease use and notify ItzZyphron / Citadel Studios.
+        </p>
+
+        <h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">PERMISSIONS</h3>
+        <p class="license-text">
+          Any use of this work outside the above restrictions requires explicit written authorization from ItzZyphron / Citadel Studios.
+        </p>
+
+        <h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">DISCLAIMER</h3>
+        <p class="license-text">
+          THIS WORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. THE COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK.
+        </p>
+
+        <p class="license-text" style="margin-top: 30px; font-weight: bold; text-align: center;">
+          Copyright &copy; 2026 ItzZyphron | Citadel Studios | citadelservers.online — All Rights Reserved.
+        </p>
       </div>
     </div>
   </div>
@@ -365,123 +422,7 @@
       // Show the current tab and mark button as active
       document.getElementById(tabName).classList.add('active');
       evt.currentTarget.classList.add('active');
-      
-      // Load license content if license tab is opened
-      if (tabName === 'license') {
-        loadLicense();
-      }
     }
-
-    function convertMarkdownToHtml(markdown) {
-      let lines = markdown.split('\n');
-      let html = [];
-      let inList = false;
-      let lastLineWasColon = false;
-      
-      for (let i = 0; i < lines.length; i++) {
-        let line = lines[i];
-        let trimmed = line.trim();
-        
-        // Empty line
-        if (!trimmed) {
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          lastLineWasColon = false;
-          if (html.length > 0 && html[html.length - 1] !== '') {
-            html.push('');
-          }
-          continue;
-        }
-        
-        // Check if this is an all-caps header
-        let isHeader = /^[A-Z][A-Z\s&']{3,}$/.test(trimmed);
-        
-        // Check if previous line ended with colon
-        let prevLineWasColon = lastLineWasColon;
-        lastLineWasColon = trimmed.endsWith(':');
-        
-        if (trimmed.startsWith('# ')) {
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          html.push(`<h2 class="section-title">${trimmed.substring(2)}</h2>`);
-        } else if (trimmed.startsWith('## ')) {
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          html.push(`<h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">${trimmed.substring(3)}</h3>`);
-        } else if (isHeader) {
-          // Plain text header in all caps
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          html.push(`<h3 style="color: #722F37; margin-top: 20px; margin-bottom: 10px;">${trimmed}</h3>`);
-        } else if (trimmed.endsWith(':')) {
-          // Line ending with colon (like "You may NOT:")
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          let content = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-          html.push(`<p class="license-text"><strong>${content}</strong></p>`);
-          lastLineWasColon = true;
-        } else if (prevLineWasColon || (inList && !isHeader && !trimmed.endsWith(':'))) {
-          // This is a list item
-          if (!inList) {
-            html.push('<ul class="license-list">');
-            inList = true;
-          }
-          let content = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-          html.push(`<li>${content}</li>`);
-        } else {
-          // Regular paragraph
-          if (inList) {
-            html.push('</ul>');
-            inList = false;
-          }
-          let content = trimmed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-          content = content.replace(/©/g, '&copy;');
-          html.push(`<p class="license-text">${content}</p>`);
-        }
-      }
-      
-      if (inList) {
-        html.push('</ul>');
-      }
-      
-      return html.join('\n');
-    }
-
-    function loadLicense() {
-      const licenseContainer = document.getElementById('license-content');
-      
-      // Check if already loaded
-      if (licenseContainer.dataset.loaded === 'true') {
-        return;
-      }
-      
-      fetch('LICENSE.md')
-        .then(response => response.text())
-        .then(markdown => {
-          const html = convertMarkdownToHtml(markdown);
-          licenseContainer.innerHTML = html;
-          licenseContainer.dataset.loaded = 'true';
-        })
-        .catch(error => {
-          console.error('Error loading license:', error);
-          licenseContainer.innerHTML = '<p style="color: #999;">Unable to load license. Please check LICENSE.md file.</p>';
-        });
-    }
-
-    // Load license when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      loadLicense();
-    });
   </script>
 </body>
 </html>
