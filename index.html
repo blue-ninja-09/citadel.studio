@@ -93,23 +93,6 @@
     .hero-sub { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text-2); max-width: 500px; margin: 0 auto 44px; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
-    /* ── OVERVIEW CARDS ── */
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-    .card {
-      background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
-      padding: 28px 24px; text-decoration: none; color: var(--text);
-      display: block; transition: all 0.25s; cursor: pointer; font-family: inherit; text-align: left;
-    }
-    .card:hover { background: var(--bg-3); border-color: rgba(114,47,55,0.45); transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.4); }
-    .card-tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--red-hover); margin-bottom: 14px;
-    }
-    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-    .card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.65; }
-    .card-arrow { display: inline-block; font-size: 0.82rem; font-weight: 600; color: var(--red-hover); margin-top: 16px; }
-
     /* ── CONTENT SPLIT ── */
     #citadel, #itzzy { background: var(--bg-2); }
     .content-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -118,7 +101,6 @@
     .section-desc.tight { margin-bottom: 28px; }
     .link-row { display: flex; flex-wrap: wrap; gap: 10px; }
 
-    /* Image placeholder — swap with <img> tag */
     .img-placeholder {
       width: 100%; aspect-ratio: 16/9;
       background: var(--bg-3);
@@ -131,19 +113,36 @@
     }
     .img-placeholder svg { opacity: 0.25; }
 
-    /* ── LINKS GRID ── */
-    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
-    .link-card {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px;
-      padding: 16px 18px; text-decoration: none; color: var(--text);
-      font-size: 0.88rem; font-weight: 500; transition: all 0.2s;
-      cursor: pointer; font-family: inherit; text-align: left;
+    /* ── LINKS SECTION ── */
+    #links { background: var(--bg); }
+    .links-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
     }
-    .link-card:hover { border-color: rgba(114,47,55,0.45); background: var(--bg-3); transform: translateY(-2px); }
-    .link-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
-    .links-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 32px 0 10px; }
-    .links-section-label:first-of-type { margin-top: 0; }
+    .links-group h3 {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .links-stack { display: flex; flex-direction: column; gap: 8px; }
+    .link-pill {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px;
+      text-decoration: none; color: var(--text);
+      font-size: 0.9rem; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .link-pill:hover {
+      background: var(--bg-3);
+      border-color: rgba(114,47,55,0.45);
+      transform: translateX(4px);
+    }
+    .link-pill-left { display: flex; align-items: center; gap: 12px; }
+    .link-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .link-pill-arrow { color: var(--text-3); font-size: 0.8rem; }
 
     /* ── APPLY ── */
     #apply { background: var(--bg-2); }
@@ -155,16 +154,6 @@
     }
     .apply-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
     .apply-card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
-
-    /* ── LICENSE ── */
-    #license { background: var(--bg); }
-    .license-block { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 32px 36px; margin-bottom: 12px; }
-    .license-block h3 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-hover); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .license-block p { font-size: 0.9rem; color: var(--text-2); line-height: 1.8; margin-bottom: 10px; }
-    .license-block ul { list-style: none; margin: 6px 0 10px; }
-    .license-block li { font-size: 0.9rem; color: var(--text-2); padding: 3px 0 3px 14px; position: relative; line-height: 1.7; }
-    .license-block li::before { content: '—'; position: absolute; left: 0; color: var(--red); font-size: 0.75rem; top: 6px; }
-    .license-footer { text-align: center; padding: 24px; border-radius: 10px; border: 1px solid rgba(114,47,55,0.22); background: var(--red-dim); font-size: 0.83rem; color: var(--text-2); margin-top: 20px; }
 
     /* ── FOOTER ── */
     footer { padding: 36px 24px; border-top: 1px solid var(--border); }
@@ -188,8 +177,9 @@
       .nav-toggle { display: flex; }
       .content-split, .content-split.reverse { grid-template-columns: 1fr; direction: ltr; gap: 28px; }
       section { padding: 64px 18px; }
-      .license-block, .apply-card { padding: 22px 18px; }
+      .apply-card { padding: 22px 18px; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .links-columns { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
 </head>
@@ -205,10 +195,8 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#citadel">Citadel Studios</a></li>
       <li><a href="#itzzy">ItzZyphron</a></li>
-      <li><a href="links">Links</a></li>
-      <li><a href="CM/banlist">Banlist</a></li>
+      <li><a href="#links">Links</a></li>
       <li><a href="#apply">Apply</a></li>
-      <li><a href="license">License</a></li>
       <li><a href="mailto:Zyphronbusiness123@gmail.com" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
@@ -220,10 +208,9 @@
     <p class="hero-sub">Your hub for everything Citadel Studios and ItzZyphron — content, projects, and resources.</p>
     <div class="hero-actions">
       <a href="#citadel" class="btn btn-primary">Explore Content</a>
-      <a href="links" class="btn btn-ghost">All Links &rarr;</a>
+      <a href="#links" class="btn btn-ghost">All Links &rarr;</a>
     </div>
   </section>
-
 
   <hr class="sep">
 
@@ -243,7 +230,6 @@
             <a href="https://discord.gg/JfYUkyNrGT" target="_blank" class="btn btn-ghost">Discord</a>
           </div>
         </div>
-        <!-- Replace this div with an <img> tag when ready -->
         <div class="img-placeholder">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           Your image here
@@ -272,7 +258,6 @@
             <a href="https://www.curseforge.com/members/itzzyphron/projects" target="_blank" class="btn btn-ghost">CurseForge</a>
           </div>
         </div>
-        <!-- Replace this div with an <img> tag when ready -->
         <div class="img-placeholder">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           Your image here
@@ -281,7 +266,72 @@
     </div>
   </section>
 
+  <hr class="sep">
 
+  <!-- LINKS -->
+  <section id="links">
+    <div class="section-inner">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">All Links</h2>
+      <p class="section-desc">Everything in one place — platforms, communities, and more.</p>
+
+      <div class="links-columns">
+
+        <div class="links-group">
+          <h3>Citadel Studios</h3>
+          <div class="links-stack">
+            <a href="https://www.youtube.com/@CitadelStudiosOfficial" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>YouTube</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+            <a href="https://discord.gg/JfYUkyNrGT" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>Discord</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="links-group">
+          <h3>ItzZyphron</h3>
+          <div class="links-stack">
+            <a href="https://www.youtube.com/@ItzZyphronOfficial" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>YouTube</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+            <a href="https://discord.gg/xW7DyBMb2B" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>Discord</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+            <a href="https://modrinth.com/user/ItzZyphron" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>Modrinth</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+            <a href="https://www.curseforge.com/members/itzzyphron/projects" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>CurseForge</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="links-group">
+          <h3>Community</h3>
+          <div class="links-stack">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMrszqib3Rqjgpxvh6MPHvEw4KYpt4EG2O8nEWuhxjyLe3sg/viewform?usp=sharing" target="_blank" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>Apply to Join</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+            <a href="mailto:Zyphronbusiness123@gmail.com" class="link-pill">
+              <span class="link-pill-left"><span class="link-pill-dot"></span>Contact</span>
+              <span class="link-pill-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
 
   <!-- APPLY -->
   <section id="apply">
@@ -306,8 +356,6 @@
       </div>
     </div>
   </section>
-
-
 
   <!-- FOOTER -->
   <footer>
