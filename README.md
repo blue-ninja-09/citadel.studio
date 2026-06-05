@@ -91,32 +91,6 @@ This project is designed for static hosting providers such as:
 3. Enable GitHub Pages in repository settings.
 4. Configure your custom domain if desired.
 
-## Local Development
-
-Clone the repository:
-
-```bash
-git clone https://github.com/blue-ninja-09/citadel.studio.git
-```
-
-Open the project directory:
-
-```bash
-cd citadel.studio
-```
-
-Run a local server:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit:
-
-```text
-http://localhost:8000
-```
-
 ## Custom Domain
 
 The repository includes a `CNAME` file for custom domain configuration.
